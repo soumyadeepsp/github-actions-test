@@ -14,6 +14,8 @@ jobs:
       - name: Delete Branch
         run: |
           ls -a
+          cd github-actions-test
+          ls -a
           git checkout master
           git push origin -d test
           echo ${{ github.ref }}
