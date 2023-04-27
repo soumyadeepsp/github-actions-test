@@ -1,0 +1,14 @@
+name: Delete Branch
+on:
+  create:
+    branches:
+      - '*'
+jobs:
+  delete-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete Branch
+        run: |
+          git branch -D ${{ github.ref }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
