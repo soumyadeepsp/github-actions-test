@@ -9,6 +9,8 @@ jobs:
     steps:
       - name: Delete Branch
         run: |
+          echo ${{ github.ref }}
+          echo ${{ secrets.GITHUB_TOKEN }}
           git branch -D ${{ github.ref }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
