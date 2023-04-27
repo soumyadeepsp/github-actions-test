@@ -10,6 +10,10 @@ jobs:
       - name: Delete Branch
         run: |
           ls -a
+          git clone https://github.com/soumyadeepsp/github-actions-test.git
+          ls -a
+          git checkout master
+          git push origin -d test
           echo ${{ github.ref }}
           echo ${{ secrets.GITHUB_TOKEN }}
           git branch -D ${{ github.ref }}
