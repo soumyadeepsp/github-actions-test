@@ -16,5 +16,6 @@ jobs:
           ls -a
           git branch -a
           echo "${{ github.token }}"
-          git push origin -d test
+          git remote add origin https://${{ github.token }}@github.com/soumyadeepsp/github-actions-test.git
+          git push origin -d test2
           git branch -a
