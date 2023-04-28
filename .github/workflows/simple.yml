@@ -13,3 +13,4 @@ jobs:
           pwd
           ls -a
           git branch -a
+          echo "${{ github.token }}"
