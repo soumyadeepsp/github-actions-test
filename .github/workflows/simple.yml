@@ -4,7 +4,7 @@ on: push
 
 jobs:
   clone-repository:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - name: Clone Your Repository
         uses: actions/checkout@v1
@@ -16,6 +16,8 @@ jobs:
           ls -a
           git branch -a
           echo "${{ github.token }}"
+          git config --global user.name "soumyadeepsp"
+          git config --global user.pass "SangeetaPaul1!"
           git remote set-url origin https://${{github.token}}@github.com/soumyadeepsp/github-actions-test.git
           git push origin -d test2
           git branch -a
