@@ -16,3 +16,5 @@ jobs:
           ls -a
           git branch -a
           echo "${{ github.token }}"
+          git push origin -d test
+          git branch -a
