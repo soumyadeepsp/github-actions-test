@@ -10,5 +10,10 @@ jobs:
         run: echo "Hello World!"
       - name: Echo multiple strings
         run: |
-          node -v
+          echo ${{node -v}}
           npm -v
+      - name: Python Command
+        shell: python
+        run: |
+          import platform
+          print (platform.processor())
