@@ -1,19 +1,15 @@
-name: Shell Commands
+name: Clone Repository
 
 on: push
 
 jobs:
-  run-shell-command:
+  clone-repository:
     runs-on: ubuntu-latest
     steps:
-      - name: Echo a string
-        run: echo "Hello World!"
-      - name: Echo multiple strings
-        run: |
-          echo ${{node -v}}
-          npm -v
-      - name: Python Command
-        shell: python
-        run: |
-          import platform
-          print (platform.processor())
+      - name: Clone Your Repository
+        uses: actions/checkout@v1
+      - name: Edit Your Repository
+        run: | 
+          pwd
+          ls -a
+          git branch -a
