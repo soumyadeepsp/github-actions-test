@@ -7,10 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Clone Your Repository
-        uses: actions/checkout@v1
+        # uses: actions/checkout@v1
+        run: |
+          ls -a
+          git clone https://soumyadeepsp:${{github.token}}@github.com/soumyadeepsp/github-actions-test.git
       - name: Edit Your Repository
         run: | 
           pwd
           ls -a
           git branch -a
-          echo "${{ github }}"
+          echo "${{ github.token }}"
