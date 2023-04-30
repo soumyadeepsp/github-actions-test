@@ -6,8 +6,11 @@ jobs:
   clone-repository:
     runs-on: ubuntu-latest
     steps:
-      - run: |
+      - name: Clone the Repository
+        run: |
           git clone https://github.com/soumyadeepsp/github-actions-test.git
+      - name: Delete the branch 
+        run: |
           git config user.name soumyadeepsp
           git config user.email soumyadeepsp@gmail.com
           pwd
