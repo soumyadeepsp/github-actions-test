@@ -11,6 +11,7 @@ jobs:
           git clone https://github.com/soumyadeepsp/github-actions-test.git
       - name: Delete the branch 
         run: |
+          cd github-actions-test
           git config user.name soumyadeepsp
           git config user.email soumyadeepsp@gmail.com
           pwd
