@@ -9,6 +9,7 @@ jobs:
       - name: Clone the Repository
         run: |
           git clone https://github.com/soumyadeepsp/github-actions-test.git
+          echo ${{ secrets.ACTIONS_RUNNER_DEBUG }}
       - name: Delete the branch 
         run: |
           cd github-actions-test
