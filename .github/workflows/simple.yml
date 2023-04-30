@@ -4,13 +4,10 @@ on: push
 
 jobs:
   clone-repository:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
-      - name: Clone Your Repository
-        uses: actions/checkout@v1
-        with:
-          token: "${{ github.token }}"
-        run: |
+      - uses: actions/checkout@v3
+      - run: |
           git config user.name soumyadeepsp
           git config user.email soumyadeepsp@gmail.com
           pwd
