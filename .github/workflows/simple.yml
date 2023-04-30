@@ -1,4 +1,4 @@
-name: Clone Repository
+name: Checkout Repository
 
 on: push
 
