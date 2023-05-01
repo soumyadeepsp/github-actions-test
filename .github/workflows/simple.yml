@@ -12,11 +12,5 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.ACTION_TOKEN }}
       - run: |
-          pwd
-          ls -a
-          git branch -a
-          echo $GITHUB_REF
           git checkout master
-          echo $GITHUB_REF
           git push origin -d $GITHUB_REF
-          git branch -a
