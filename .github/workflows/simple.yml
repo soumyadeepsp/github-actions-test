@@ -14,5 +14,6 @@ jobs:
           pwd
           ls -a
           git branch -a
-          git push origin -d test3
+          echo $GITHUB_REF
+          git push origin -d test4
           git branch -a
