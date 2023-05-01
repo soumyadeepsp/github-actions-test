@@ -11,10 +11,8 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.ACTION_TOKEN }}
       - run: |
-          git config user.name soumyadeepsp
-          git config user.email soumyadeepsp@gmail.com
           pwd
           ls -a
           git branch -a
-          git push origin -d test2
+          git push origin -d test3
           git branch -a
