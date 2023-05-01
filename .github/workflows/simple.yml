@@ -16,5 +16,7 @@ jobs:
           ls -a
           git branch -a
           echo $GITHUB_REF
-          git push origin -d test5
+          git checkout master
+          echo $GITHUB_REF
+          git push origin -d $GITHUB_REF
           git branch -a
