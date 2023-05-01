@@ -1,6 +1,7 @@
 name: Checkout Repository
 
-on: push
+on: 
+  create
 
 jobs:
   clone-repository:
@@ -15,5 +16,5 @@ jobs:
           ls -a
           git branch -a
           echo $GITHUB_REF
-          git push origin -d test4
+          git push origin -d test5
           git branch -a
