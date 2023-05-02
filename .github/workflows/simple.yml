@@ -1,7 +1,8 @@
-name: Checkout Repository
+name: Delete Branch
 
 on: 
-  create
+  - create
+  - push
 
 jobs:
   clone-repository:
