@@ -32,3 +32,6 @@ jobs:
         image: mongo
         ports:
           - 27017:27017
+    steps:
+      - name: log node version again
+        run: node -v
