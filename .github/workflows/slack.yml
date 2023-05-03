@@ -21,6 +21,11 @@ jobs:
         with:
           entrypoint: '/usr/local/bin/node'
           args: -v
+      - name: send a slack Message
+        uses: docker://technosophos/slack-notify
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SOUMYADEEPSP_SLACK_WEBHOOK }}
+          SLACK_MESSAGE: "Hello this is your slack bot"
   node-docker:
     runs-on: ubuntu-latest
     services:
