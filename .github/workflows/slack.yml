@@ -2,6 +2,7 @@ name: Send Slack Message
 
 on:
   - push
+  - create
 
 jobs:
   docker-steps:
@@ -9,34 +10,8 @@ jobs:
     container: 
       image: node:20-alpine3.16
     steps:
-      - name: log node version
-        run: node -v
-      - name: step with docker
-        uses: docker://node:18-alpine
-        with:
-          entrypoint: '/bin/echo'
-          args: 'Hello World'
-      - name: step with docker
-        uses: docker://node:18-alpine
-        with:
-          entrypoint: '/usr/local/bin/node'
-          args: -v
       - name: send a slack Message
         uses: docker://technosophos/slack-notify
         env:
           SLACK_WEBHOOK: ${{ secrets.SOUMYADEEPSP_SLACK_WEBHOOK }}
           SLACK_MESSAGE: "Hello this is your slack bot"
-  node-docker:
-    runs-on: ubuntu-latest
-    services:
-      app:
-        image: node:20-alpine3.16
-        ports:
-          - 3001:3000
-      mongo:
-        image: mongo
-        ports:
-          - 27017:27017
-    steps:
-      - name: log node version again
-        run: node -v
