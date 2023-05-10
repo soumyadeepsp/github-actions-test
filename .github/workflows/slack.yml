@@ -8,7 +8,7 @@ jobs:
   docker-steps:
     runs-on: ubuntu-latest
     env: 
-      GITHUB_CONTEXT: ${{ toJson(github).triggering_actor }}
+      GITHUB_CONTEXT: ${{ toJson(github) }}.triggering_actor
     # if: ${GITHUB_REF}=='DASRE-/'
     container: 
       image: node:20-alpine3.16
