@@ -21,4 +21,3 @@ jobs:
       - name: echo
         run: |
           echo ${GITHUB_CONTEXT}
-          startsWith(github.ref_name, 'DASRE')
