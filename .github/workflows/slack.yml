@@ -1,7 +1,6 @@
 name: branch-name-alert
 
 on:
-  - push
   - create
 
 jobs:
@@ -9,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     env: 
       GITHUB_CONTEXT: ${{ toJson(github) }}
-    # if: github.ref_name=='DASRE-*'
+    if: github.ref_name=='DASRE-*'
     container: 
       image: node:20-alpine3.16
     steps:
