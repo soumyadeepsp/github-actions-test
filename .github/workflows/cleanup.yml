@@ -17,5 +17,7 @@ jobs:
           token: ${{secrets.CLEANUP_ACTION}}
       - run: |
           git checkout master
-          git branch -r
-          echo ${GITHUB_CONTEXT}
+          touch branches.txt
+          git branch -r > branches.txt
+          ls -a
+          cat branches.txt
