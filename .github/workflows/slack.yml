@@ -1,4 +1,4 @@
-name: Send Slack Message
+name: branch-name-alert
 
 on:
   - push
@@ -7,6 +7,7 @@ on:
 jobs:
   docker-steps:
     runs-on: ubuntu-latest
+    if: ${{ startsWith($GITHUB_REF, 'DASRE-') }}
     container: 
       image: node:20-alpine3.16
     steps:
