@@ -1,4 +1,4 @@
-name: branch-name-alert
+name: Branch-name-alert
 
 on:
   - create
