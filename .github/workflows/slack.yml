@@ -19,4 +19,4 @@ jobs:
       #     SLACK_WEBHOOK: ${{ secrets.SOUMYADEEPSP_SLACK_WEBHOOK }}
       #     SLACK_MESSAGE: "Hello this is your slack bot"
       - name: echo
-        run: echo "$GITHUB_CONTEXT.triggering_actor"
+        run: echo ${GITHUB_CONTEXT}.triggering_actor
