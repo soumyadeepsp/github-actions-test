@@ -8,6 +8,8 @@ on:
 jobs:
   cleanup:
     runs-on: ubuntu-latest
+    env: 
+      GITHUB_CONTEXT: ${{ toJson(github) }}
     steps:
       - uses: actions/checkout@v3
         with:
@@ -16,3 +18,4 @@ jobs:
       - run: |
           git checkout master
           git branch -r
+          echo ${GITHUB_CONTEXT}
