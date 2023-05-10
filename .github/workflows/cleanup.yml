@@ -15,4 +15,4 @@ jobs:
           token: ${{secrets.CLEANUP_ACTION}}
       - run: |
           git checkout master
-          ls -a
+          git branch -r
