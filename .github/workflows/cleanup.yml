@@ -22,5 +22,4 @@ jobs:
           cat branches.txt
           rm branches.txt
           touch branches.txt
-          python3 cleanup.py > branches.txt
-          cat branches.txt
+          python3 cleanup.py
