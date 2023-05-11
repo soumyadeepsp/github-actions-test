@@ -1,9 +1,9 @@
 name: forty-eight-hour-cleanup
 
 on:
-  # - push
-  schedule:
-    - cron: 0 0 1/2 * *
+  - push
+  # schedule:
+  #   - cron: 0 0 1/2 * *
 
 jobs:
   cleanup:
@@ -21,3 +21,4 @@ jobs:
           git branch -r > branches.txt
           ls -a
           cat branches.txt
+          python3 ../../cleanup.py

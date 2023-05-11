@@ -8,7 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     env: 
       GITHUB_CONTEXT: ${{ toJson(github) }}
-    # if: github.ref_name=='DASRE-*'
     if: startsWith(github.ref_name, 'DASRE') || startsWith(github.ref_name, 'test')
     container: 
       image: node:20-alpine3.16
