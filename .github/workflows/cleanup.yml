@@ -21,4 +21,4 @@ jobs:
           git branch -r > branches.txt
           ls -a
           cat branches.txt
-          python3 ../../cleanup.py
+          python3 cleanup.py
