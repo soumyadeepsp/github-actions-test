@@ -1,0 +1,13 @@
+  origin/ADSRE-4567
+  origin/DASRE-1234
+  origin/DASRE-2345
+  origin/DASRE-3456
+  origin/DASRE-9876
+  origin/HEAD -> origin/master
+  origin/master
+  origin/random
+  origin/test2
+  origin/test3
+  origin/test4
+  origin/test5
+  origin/test6
