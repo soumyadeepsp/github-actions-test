@@ -1,6 +1,7 @@
 arr = []
 print ("hello world")
 with open("branches.txt") as file:
+    print (file)
     for item in file:
         print(item)
         item = item.replace(' ', '')
