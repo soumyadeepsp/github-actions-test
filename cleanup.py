@@ -4,14 +4,18 @@ with open("branches.txt") as file:
         print(item)
         item = item.replace(' ', '')
         item = item.replace('\n', '')
-        if ("DASRE-" not in item):
+        if ("DASRE-" not in item and "master" not in item):
             index = item.rindex("origin/") + 7
+            print (item[index:])
+            print (True)
             arr.append(item[index:])
+        else:
+            print (False)
 print (arr)
 
-import subprocess
-for branch in arr:
-    test = subprocess.Popen(["git", "push", "origin", "--delete", branch], stdout=subprocess.PIPE)
+# import subprocess
+# for branch in arr:
+#     test = subprocess.Popen(["git", "push", "origin", "--delete", branch], stdout=subprocess.PIPE)
 
 # import subprocess
 # test = subprocess.Popen(["git", "log", "origin/DASRE-1234", "--not", "master"], stdout=subprocess.PIPE)
