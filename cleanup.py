@@ -4,22 +4,27 @@ with open("branches.txt") as file:
         print(item)
         item = item.replace(' ', '')
         item = item.replace('\n', '')
-        arr.append(item)
+        if ("DASRE-" not in item):
+            index = item.rindex("origin/") + 7
+            arr.append(item[index:])
 print (arr)
 
 import subprocess
-test = subprocess.Popen(["git", "log", "origin/DASRE-1234", "--not", "master"], stdout=subprocess.PIPE)
-output = test.communicate()[0].decode()
-print (output.index('Date:'))
-start_index = output.index('Date:')+5
-end_index = output.index('\n\n')-6
-output = output[start_index:end_index]
-output = output.replace(' ', '')
-print (output)
+test = subprocess.Popen(["git", "push", "origin", "--delete", "test5"], stdout=subprocess.PIPE)
 
-import datetime
-now = datetime.datetime.now()
-creation_time = datetime.datetime(2023, 5, 12, 1, 13, 9)
-print (creation_time)
-print (type(creation_time))
-print(now)
+# import subprocess
+# test = subprocess.Popen(["git", "log", "origin/DASRE-1234", "--not", "master"], stdout=subprocess.PIPE)
+# output = test.communicate()[0].decode()
+# print (output.index('Date:'))
+# start_index = output.index('Date:')+5
+# end_index = output.index('\n\n')-6
+# output = output[start_index:end_index]
+# output = output.replace(' ', '')
+# print (output)
+
+# import datetime
+# now = datetime.datetime.now()
+# creation_time = datetime.datetime(2023, 5, 12, 1, 13, 9)
+# print (creation_time)
+# print (type(creation_time))
+# print(now)
