@@ -10,7 +10,7 @@ with open("branches.txt") as file:
         print(item)
         item = item.replace(' ', '')
         item = item.replace('\n', '')
-        if ("DASRE-" not in item and "master" not in item):
+        if ("DASRE-" not in item and "master" not in item and "test" not in item):
             index = item.rindex("origin/") + 7
             print (item[index:])
             print (True)
