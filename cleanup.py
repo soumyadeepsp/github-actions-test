@@ -1,7 +1,7 @@
 arr = []
 print ("hello world")
 file = open("branches.txt", "r")
-print (file)
+print (file.read())
 file.close()
 with open("branches.txt") as file:
     print (file)
