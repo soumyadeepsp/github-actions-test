@@ -19,9 +19,9 @@ with open("branches.txt") as file:
             print (False)
 print (arr)
 
-# import subprocess
-# for branch in arr:
-#     test = subprocess.Popen(["git", "push", "origin", "--delete", branch], stdout=subprocess.PIPE)
+import subprocess
+for branch in arr:
+    test = subprocess.Popen(["git", "push", "origin", "--delete", branch], stdout=subprocess.PIPE)
 
 # import subprocess
 # test = subprocess.Popen(["git", "log", "origin/DASRE-1234", "--not", "master"], stdout=subprocess.PIPE)
