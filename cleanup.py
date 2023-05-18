@@ -12,30 +12,30 @@ with open("branches.txt") as file:
         item = item.replace('\n', '')
         if ("DASRE-" not in item and "master" not in item and "test" not in item):
             index = item.rindex("origin/") + 7
-            print (item[index:])
-            print (True)
             arr.append(item[index:])
-        else:
-            print (False)
+arr.pop(0)
 print (arr)
 
 import subprocess
 for branch in arr:
-    test = subprocess.Popen(["git", "push", "origin", "--delete", branch], stdout=subprocess.PIPE)
-
-# import subprocess
-# test = subprocess.Popen(["git", "log", "origin/DASRE-1234", "--not", "master"], stdout=subprocess.PIPE)
-# output = test.communicate()[0].decode()
-# print (output.index('Date:'))
-# start_index = output.index('Date:')+5
-# end_index = output.index('\n\n')-6
-# output = output[start_index:end_index]
-# output = output.replace(' ', '')
-# print (output)
-
-# import datetime
-# now = datetime.datetime.now()
-# creation_time = datetime.datetime(2023, 5, 12, 1, 13, 9)
-# print (creation_time)
-# print (type(creation_time))
-# print(now)
+    status, commit_id = subprocess.getstatusoutput("git log master.."+branch+" --oneline | tail -1")
+    print (commit_id)
+    space_index = commit_id.find(' ')
+    commit_id = commit_id[0:space_index]
+    status, date = subprocess.getstatusoutput("git show -s --format='%ci' "+ commit_id)
+    print (date)
+    import datetime
+    now = datetime.datetime.now()
+    space_index = date.find(" +")
+    date = date[0:space_index]
+    year = int(date[0:4])
+    month = int(date[5:7])
+    day = int(date[8:10])
+    hour = int(date[11:13])
+    minute = int(date[14:16])
+    second = int(date[17:19])
+    creation_time = datetime.datetime(year, month, day, hour, minute, second)
+    delta = now - creation_time
+    print (delta.days)
+    if (delta.days<24):
+        test = subprocess.getstatusoutput("git push origin --delete " + branch)
