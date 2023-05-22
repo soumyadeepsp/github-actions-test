@@ -1,7 +1,7 @@
 name: branch-name-alert
 
 on:
-  - create
+  - push
 
 jobs:
   docker-steps:
