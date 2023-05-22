@@ -15,5 +15,9 @@ jobs:
       - name: send a slack Message
         uses: docker://technosophos/slack-notify
         env:
-          SLACK_WEBHOOK: ${{ secrets.SOUMYADEEPSP_SLACK_WEBHOOK }}
-          SLACK_MESSAGE: "Hello this is your slack bot"
+          SLACK_WEBHOOK: ${{ secrets.DASRE_GITHUB_STANDARDS_SW }}
+          SLACK_MESSAGE: |
+            "The branch ${{ GITHUB_REF }} does not follow the GitHub Branch naming standards for the Datatools Team. This will get deleted in the next 48 hours.
+            Please create a branch that follows the naming convention.
+            Naming convention - The branch name should start with the Jira ID, or it should be one of the whitelisted names.
+            Please find the whitelisted names in Line 1 of ./.github/workflows/cleanup.py file in this repository."

@@ -1,19 +1,22 @@
+whitelisted_branches = ["test"]
+
+def checkWhitelist(s):
+    for i in whitelisted_branches:
+        if (i==s):
+            return True
+    return False
+
 arr = []
-print ("hello world")
 file = open("branches.txt", "r")
 lines = file.readlines()
-print (lines)
 file.close()
 with open("branches.txt") as file:
-    print (file)
     for item in file:
-        print(item)
         item = item.replace(' ', '')
         item = item.replace('\n', '')
-        if ("DASRE-" not in item and "master" not in item and "test" not in item):
+        if ("DASRE-" not in item and item!="master" and checkWhitelist(item)):
             index = item.rindex("origin/") + 7
             arr.append(item[index:])
-arr.pop(0)
 print (arr)
 
 import subprocess
@@ -36,6 +39,5 @@ for branch in arr:
     second = int(date[17:19])
     creation_time = datetime.datetime(year, month, day, hour, minute, second)
     delta = now - creation_time
-    print (delta.days)
     if (delta.days<24):
         test = subprocess.getstatusoutput("git push origin --delete " + branch)
